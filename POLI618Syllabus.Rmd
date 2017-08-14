@@ -9,13 +9,22 @@ output:
   geometry: margin=1in
 title: "POLI 618: Techniques of Empirical Research"
 author: Professor Aaron Erlich
-date: "Fall 2016"
+date: "Autumn 2017"
 email: "aaron.erlich@mcgill.ca"
 phone: 514-398-4756
-officehours: W 16-17 (drop-in), F 16-17 [(by appt)](http://www.aaronerlich.com/office-hours)
+officehours: T 14-15 [(by appt)](http://www.aaronerlich.com/office-hours), Th 14-15 (drop-in)
 office: "3610 McTavish, Room 26-4"
-classroom: "EDUC 627"
-classhours: "2:35-5:25"
+classroom: "MUSIC A-412"
+classhours: "8:35 AM - 9:55 AM"
+
+
+TA:
+  - {name: "Aengus Bridgman", 
+     email: "aengus.bridgman@mail.mcgill.ca", 
+     office: "TBD",
+     officehours: "TBD",
+     conferencehours: "TBD"}
+
 fontfamily: mathpazo
 fontsize: 11pt
 header-includes:
@@ -26,7 +35,7 @@ header-includes:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache=FALSE, dev='pdf')
-mon <- as.Date("2016-01-02")
+mon <- as.Date("2016-09-04")
 # fri <- as.Date("2016-01-08")
 
 #DEFINE COURSE DATES
@@ -34,10 +43,10 @@ mon <- as.Date("2016-01-02")
 #quiz2 <- as.Date("2016-11-10")
 
 paperCheckIn <- as.Date("2016-02-16")
-FinalPaper <- as.Date("2016-12-19")
+FinalPaper <- as.Date("2017-10-09")
 Poster <- as.Date("2016-12-01")
-lastClassDay <- as.Date("2016-04-07")
-endDay <- as.Date("2016-12-19")
+lastClassDay <- as.Date("2017-12-01")
+endExamDay <- as.Date("2016-12-21")
 
 formatCourseDate <- function(date) {
   date <- format(date, format="%A, %b %d")
@@ -81,7 +90,7 @@ This course is designed to introduce graduate students to the new and exciting w
 3. Gain real world skills that will help you obtain jobs in careers of the future. 
 
 #Textbooks
-Given people's various backgrounds we will have three required and several optional textbooks in addition to the assigned articles. The Bailey book is a great book and very applied. Everyone should read it. For those of you seriously interested in pursuing quantitative analysis you should then read the Fox book on top of the Bailey book. Unless otherwise cleared with me, everyone is required to do the math review problems assigned from the Moore book. The Grolemund and Wickham book is a great tool (that is online and free) and can often be used in lieu of videos or to help with coding. 
+Given people's various backgrounds, we will have three required and several optional textbooks in addition to the assigned articles. The Bailey book is a great book and very applied. Everyone should read it. For those of you seriously interested in pursuing quantitative analysis you should then read the Fox book on top of the Bailey book. Unless otherwise cleared with me, everyone is required to do the math review problems assigned from the Moore book. The Grolemund and Wickham book is a great tool (that is online and free) and can often be used in lieu of videos or to help with coding. 
 
 ```{r, echo = FALSE, results="asis"} 
 bib[author = "Bailey"]
@@ -108,11 +117,11 @@ There are 1000 points available in the class. Therefore, for each 10% of the gra
 
 - **10%**. *Attendance and participation.*
 
-- **40%**. *Problem sets*.  While you may talk generally with other students about these assignments, these problems sets must be done individually. See the computer code section on academic integrity.
+- **40%**. *Problem sets*.  While you may talk generally with other students about these assignments, these problems sets must be done individually. See the computer code section on academic integrity. A quarter of this grade will be from peer-reviewing each others' assignments on *Github*.
 
 - **10%** *Final Presentation*. In class presentation of research
 
-- **40%** *Final Paper*. A paper --- likely to be part of your dissertation or MA Thesis. 
+- **40%** *Final Paper*. A paper --- likely to be part of your dissertation or MA Thesis or a replication paper. 
  
 
 ##Re-Grading
@@ -140,17 +149,16 @@ Students who wish to contest a grade for an assignment or exam must do so in wri
 ```
 
 #Assignment Submission
-1. Problem sets must be submitted via *mycourses*. You must use \texttt{.Rmd} otherwise known as \texttt{rmarkdown} files to complete your homework. Do not submit your homework using Microsft Word or any other document editor. It will not be graded. Part of your grade may be peer-reviewing or colleagues homework assignments. Please work individually. There will be approximately 6 problem sets. I reserve the right to lower the number of problem sets if needed. In principle, these assignments will be due every 2 weeks starting week 2 for the proceeding 12 weeks of the term (skipping the break).
+1. Problem sets must be submitted via *Github*. You must use \texttt{.Rmd} otherwise known as \texttt{rmarkdown} files to complete your homework. Do not submit your homework using Microsft Word or any other document editor. It will not be graded. Part of your homework grade will be peer-reviewing your colleagues' homework assignments via the course *github*. There will be approximately 5 problem sets. I reserve the right to lower the number of problem sets if needed. In principle, these assignments will be due every 2 weeks starting week 2 for the proceeding 12 weeks of the term.
 
 ##Interim Data Set and Check-in
 All students must submit a one page write up of the data set they are going to use and the research question they are going to ask by `r formatCourseDate(paperCheckIn)`. This should be a one page write up in \texttt{rmarkdown} explaining the data set/s which you are going to use and the question you will ask. You should also highlight your outcome variable. 
 
 ## Presentation
-Each individual will present their work in class to the rest of the course. All presentations must be completed in .Rpres of Beamer (LaTeX)
-
+Each individual will present their work in class to the rest of the course. All presentations must be completed in .Rpres or Beamer (LaTeX)
 
 ## Paper
-All student will submit a final paper that is of article length. This will be done via *MyCourses*. This can be a replication paper with extension of the original replication or a new paper. A new paper must contain 1) a clear theory proposing a relationship between explanatory variable(s) on an outcome variable; 2) use of linear regression (or some other model cleared with professor); 3) clear discussion of both findings and limitations of the paper. Students may use a chapter of their master or Ph.D. thesis as a research paper. The paper is due by the end of exam period. 
+All student will submit a final paper that is of article length. This will be done via *MyCourses*. This can be a replication paper with extension of the original replication or a new paper. It is highly recommend you do a replication. Please come talk me as early in the term as possible, if you want to write an original paper. An original paper must contain 1) a clear theory proposing a relationship between explanatory variable(s) on an outcome variable; 2) use of linear regression (or some other model cleared with professor); 3) clear discussion of both findings and limitations of the paper. Students may use a chapter of their master or Ph.D. thesis as a research paper. The paper is due by the end `r formatCourseDate(paperCheckIn)`. 
 
 # Class Discussion List and E-mail Policy
 I have set up a class discussion list on *MyCourses*. I encourage you to use this mailing list to ask questions you may have. *NEVER* post your code or specific homework questions on the course list server. Please post general questions! If you post homework code on the website, it will be taken down and your grade may be lowered. 
@@ -199,6 +207,11 @@ End-of-course evaluations are one of the ways that McGill works towards maintain
 * READING:
     + Moore Ch. 1
     + Bailey Ch. 1
+    
+* TASKS
+    + Complete [tryGit](https://try.github.io/levels/1/challenges/1)
+    + Install git on your computer and push a test file to github
+
 
 ```{r, echo = FALSE, results="asis"} 
 # bib[90:97]
@@ -207,12 +220,10 @@ End-of-course evaluations are one of the ways that McGill works towards maintain
 #### `r advdate(mon, 2)`: Introduction to R-Markdown, Managing Data, Replication, Git and Github
 
 * VIDEOS:
-    + Data camp: [R-markdown lectures](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial)
-* TASKS
-    + Complete [tryGit](https://try.github.io/levels/1/challenges/1)
-    + Install git on your computer and push a test file to github
+    + Data camp: [Data minipulation lectures](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial)
+
 * READING: 
-    + Moore Chapter 5,6
+    + Moore Chapter 5, 6
     + Bailey Chapter 2
     + Grolemund & Wikham Ch. 27
     +
@@ -304,8 +315,8 @@ bib[author = "Brambor"]
 
 ####  `r advdate(mon, 13)`: Presentations 2
 
-####  `r advdate(mon, 14)`: Presentations 3 OR Special Class on Text as Data
-* TBD 
+<!-- ####  `r advdate(mon, 14)`: Presentations 3 OR Special Class on Text as Data
+* TBD  -->
 
 # Recommended Textbooks
 There are many other important textbooks and at some point you may find yourself looking for a different explanation of something you didn't understand -- or looking to go deeper. Here are some places to start.
