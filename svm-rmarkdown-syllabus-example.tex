@@ -1,0 +1,601 @@
+\documentclass[11pt,]{article}
+\usepackage[margin=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}} 
+\usepackage{longtable,booktabs}
+
+\usepackage{parskip}
+\usepackage{titlesec}
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{6pt plus 2pt minus 2pt}
+
+\usepackage{titling}
+\setlength{\droptitle}{-.25cm}
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{6pt plus 2pt minus 1pt}
+%\setlength{\emergencystretch}{3em}  % prevent overfull lines 
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{lastpage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.0pt} 
+\lhead{}
+\chead{}
+\rhead{\footnotesize POLS 311: Techniques of Empirical Research -- Fall 2016}
+\lfoot{}
+\cfoot{\small \thepage/\pageref*{LastPage}}
+\rfoot{}
+
+\fancypagestyle{firststyle}
+{
+\renewcommand{\headrulewidth}{0pt}%
+   \fancyhf{}
+   \fancyfoot[C]{\small \thepage/\pageref*{LastPage}}
+
+}
+
+%\def\labelitemi{--}
+%\usepackage{enumitem}
+%\setitemize[0]{leftmargin=25pt}
+%\setenumerate[0]{leftmargin=25pt}
+
+
+
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+}
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={ ()},
+             pdfkeywords = {},  
+            pdftitle={POLS 311: Techniques of Empirical Research},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+
+\setcounter{secnumdepth}{3} %add section headers
+
+
+
+
+
+\usepackage{setspace}
+
+\title{POLS 311: Techniques of Empirical Research}
+\author{Aaron Erlich}
+\date{Fall 2016}
+
+
+\begin{document}  
+
+		\maketitle
+		
+	
+		\thispagestyle{firststyle}
+
+%	\thispagestyle{empty}
+
+
+	\noindent \begin{tabular*}{\textwidth}{ @{\extracolsep{\fill}} lr @{\extracolsep{\fill}}}
+
+
+E-mail: \texttt{\href{mailto:aaron.erlich@mcgill.ca}{\nolinkurl{aaron.erlich@mcgill.ca}}} & Phone: {\texttt 514-398-4400 ext. 3342 (until Sep 24)}\\
+Office Hours: T 14-15 \href{http://www.aaronerlich.com/office-hours}{(by appt)}, Th
+14-15 (drop-in)  &  Class Hours: T-Th 16:05-17:25\\
+Office: 24-3 3610 McTavish (until Sep 24)  & Class Room: Burnside Hall 1B45\\
+	&  \\ 
+	\hline
+	\end{tabular*}
+
+	\noindent \begin{tabular*}{\textwidth}{ @{\extracolsep{\fill}} lr @{\extracolsep{\fill}}}
+TA \textbf{Chris Chhim} & TA E-mail: \texttt{\href{mailto:chris.chhim@mail.mcgill.ca}{\nolinkurl{chris.chhim@mail.mcgill.ca}}} \\
+TA Office Hours: TBD  &
+                                                                   Conference
+                                                                   Hours:
+                                                                   Check
+                                                                   your schedule
+                                                                   \\
+TA Office: TBD  &  Conference
+                                                       Room: Leacock
+                                                       212 \\ 
+	\hline
+\end{tabular*}
+	
+\vspace{2mm}
+	
+
+
+\section{Course Description}\label{course-description}
+
+This course is designed to introduce students to the new and exciting
+world of data driven political analysis. The course employs examples
+from across political science sub-disciplines to discuss questions such
+as whether government spending helps reduce poverty or whether contact
+with canvassers can change voters' minds The course also provides
+students real world skills that they can put on the resumés when
+applying for jobs. Data science is one of the fastest and most important
+industries out there! And political scientists are playing a major role
+in the field.
+
+\subsection{Who this course is for?}\label{who-this-course-is-for}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  This is your first semester long course on quantitative methods for
+  data analysis. If you have already taken a full semester statistics
+  course you should not enroll.
+\item
+  Your are willing to spend time outside of the classroom to learn the
+  course matertials, as data analysis is a skill learned by doing.
+\item
+  You want to be able to apply quantitative methods to your papers and
+  future career.
+\end{itemize}
+
+\section{Course Objectives}\label{course-objectives}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Learn the basic tools of empirical research in political science
+\item
+  Obtain skils in R, a highly powerful programming language used
+  extenstively by academics in poitical science across the world, as
+  well as the open source and data science community.
+\item
+  Gain real world skills that will help you obtain jobs in careers of
+  the future.
+\end{enumerate}
+
+\section{Textbook}\label{textbook}
+
+The textbook for this course will be:
+
+Imai, Kosuke. \emph{A First Course in Quantitative Social Science}.
+Princeton University Press, forthcoming.
+
+Professor Imai has kindly made this book available to the class for
+free, since it is not yet published. It is available on
+\textbf{MyCourses}. Please do not share with students outside of the
+class.
+
+\section{Evaluation Policy}\label{evaluation-policy}
+
+A description of the means of evaluation to be used in the course:
+
+There are 1000 points available in the class. Therefore, for each 10\%
+of the grade 100 points is allotted.
+
+\begin{itemize}
+\item
+  \textbf{10\%}. \emph{Attendance and participation in conference
+  section.} Your TA will take attendance.
+\item
+  \textbf{40\%}. \emph{Problem sets}. Please see the problem sets
+  section. While you may talk generally with other students about these
+  assignments, these problems sets must be done individually. See the
+  computer code section on academic integrity. Each problem set is worth
+  \textbf{100 points}. There will be four assigned problem sets.
+\item
+  \textbf{20\%}. \emph{In-class quizzes}. These quizzes will be closed
+  book and closed notes. They will occur in class on the dates specified
+  in the syllabus. Each quiz is worth \textbf{100 points}.
+\item
+  \textbf{30\%} \emph{Group project}. This project will consist of a
+  poster and 5-10 page writeup of your findings. The group project is
+  comprised of two sub-components. The individual score and the group
+  score. You will receive more information about this as the course goes
+  along. + Each individual in the group will be given an individual
+  grade worth \textbf{100 points}, based on the evaluation of the work
+  they did on the project, what they learned and their ranking of other
+  group members participation. - Everyone in the group will be assigned
+  a group grade woth \textbf{200 points}.
+
+  \begin{itemize}
+  \itemsep1pt\parskip0pt\parsep0pt
+  \item
+    \textbf{150 points} for the paper
+  \item
+    \textbf{50 points} for the poster
+  \end{itemize}
+\item
+  \textbf{Extra credit-5\%}. \emph{Your participation in using the
+  clicking technology.} I will use the clicker technology to ensure
+  student comprehension of the material. You can receive up to
+  \textbf{50 extra credit points} for using the clicking. Your points
+  will be determined by the percentage of the activities you participate
+  in rounded up to the nearest point.
+\end{itemize}
+
+For those who are participating for extra credit we will be using the
+Turning Pointclassroom response system in class. Youwill be able to
+submit answers to in-class questions using Apple or Android smartphones
+andtablets, laptops, or via text message (SMS). \textbf{UNLESS OTHERWISE
+INSTRUCTED THIS IS THE ONLY TIME PHONES OR COMPUTERS SHOULD BE OUT
+DURING CLASS, UNLESS YOU HAVE DISCESSED WITH THE INSTRUCTOR AHEAD OF
+TIME.}
+
+Turning Point is available to all McGill students for FREE, but you have
+to register. Please see XXX for the Student Quick Start Guide which
+outlines how you to register, and provides a brief overview to get you
+up and running on the system.
+
+\subsection{Re-Grading}\label{re-grading}
+
+Students who wish to contest a grade for an assignment or exam must do
+so in writing (by email, sent to me) providing the reasoning behind
+their challenge to the grade received, within two weeks of the day on
+which the assignments are returned. The TA who graded theassignment will
+re-grade your assignment, and may \textbf{raise or lower the grade}. If
+you are still unsatisfied after the re-assessment, you can re-submit the
+assignment to me (original copy with TA comments), along with your
+justification. I will then re-evaluate the paper, but also reserve the
+right to \textbf{raise or lower the grade}.
+
+\section{Assignment Submission}\label{assignment-submission}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Problem sets must be submitted in hard copy during class the day it is
+  due. You must use \texttt{.Rmd} otherwise known as \texttt{rmarkdown}
+  files to complete your homework. Do not submit your homework using
+  Microsft Word or any other document editor. It will not be graded.
+\item
+  The final poster (in \texttt{PDF} format) and the final group write up
+  in \texttt{PDF} format compiled from \texttt{.Rmd} must be submitted
+  via MyCourses. All group members names be put on each of these
+  assigmnments with a \textbf{SIGNED statement} testifying that everyone
+  participated. One student for each group should be designated to turn
+  in the poster and paper.
+\item
+  The final individual evaluation of the group project must be submitted
+  individually to \textbf{MyCourses}.
+\end{enumerate}
+
+\section{Group Project}\label{group-project}
+
+Each group should be made up of four people and cannot be more than four
+people. In case of difficulty in finding the appropriate number of group
+members, I have created a Google doc
+(\href{https://docs.google.com/spreadsheets/d/1WbFUYr7v0FBzQlHUTkLxFZTt4A8Mib5wv5apeSnKx4M/edit?usp=sharing}{here}).
+In the first tab, students can share their interest and find potential
+group members. In the second tab, please register your group members and
+any preliminary topic you might have.
+
+\subsection{Interim Data Set and
+Check-in}\label{interim-data-set-and-check-in}
+
+All groups must submit a one page write up of the data set they are
+going to use and the research question they are going to ask by Tuesday,
+Oct 25. This should be a one page write up in \texttt{rmarkdown}
+explaining the data set which you are going to use and the question you
+will ask. You should also highlight your outcome variable.
+
+\subsection{Poster}\label{poster}
+
+Each group will present a poster the last day of class. Faculty may be
+invited and you may also invite your friends. A team of faculty members
+will judge the best poster. You need to print your posters. While there
+is no specific size requirement, it should be poster size. I will
+provide some examples. One options to print your posters is through WSR
+Graphics Stewart Creagh WSR Graphics. \texttt{stewgc@videotron.ca}. You
+send him what you want printed.
+
+\subsection{Paper}\label{paper}
+
+All groups will submit a final paper that is 5-10 pages in length. This
+will be done via \textbf{MyCourses}
+
+\subsection{E-mail and Class Mailing
+List}\label{e-mail-and-class-mailing-list}
+
+XXXX
+
+\subsection{Make-Up Work Policy}\label{make-up-work-policy}
+
+If you are absent for documented emergency medical or family reasons, an
+alternative quiz date will be arranged. The alternative arrangement is
+only open to those who can provide a valid medical/family reason for
+missing the midterm or final exams. If you cannot provide a valid reason
+for your absence, you will receive 0 points for the missed quiz.
+
+Students who need to miss a class due to a religious holiday should
+notify me at least fourteen days prior to the holiday. If you must miss
+a class, an examination, a work assignment, or a project in order to
+observe a religious holy day, you will be given an opportunity to
+complete the missed work within a reasonable time after the absence.
+
+\section{Technology Policy}\label{technology-policy}
+
+\subsection{Screens in the Classroom
+Policy}\label{screens-in-the-classroom-policy}
+
+Mobile computer, telephone and table (MC) is strictly limited in this
+class. The current
+\href{http://www.psychologicalscience.org/index.php/news/releases/take-notes-by-hand-for-better-long-term-comprehension.html}{literature}
+recognized that MCs inhibit learning. I have found that computers serve
+to distract more students, so no computers, tablets or phones are
+allowed to be used in the classroom unless specified by the instructor.
+Currently, MC computing is allowed when there is an interactive quiz or
+I specifically state it can be used.
+
+The conference sections are reserved specifically for practicing coding.
+Feel free to bring your own computer to these sessions.
+
+\subsection{Recording Policy}\label{recording-policy}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  No audio or video recording of any kind is allowed in class without
+  the explicit permission of the instructor.
+\item
+  Mobile Computing devices are not to be used for voice communication
+  without the explicit permission of the instructor.
+\end{itemize}
+
+\section{Academic Integrity}\label{academic-integrity}
+
+\subsection{Course Policy on Computer
+Code}\label{course-policy-on-computer-code}
+
+Just like writing a paper, copying other people's computer code
+constitutes plagiarism. Moreover data programming is learned through
+trial and error. \textbf{Please do not under any circumstances copy
+another students code.} If you are found to have done so, you may be
+referred to the appropriate Dean. The instructors reserve the right to
+use software to compare the code that has been written by different
+students.
+
+\subsection{McGill Policy}\label{mcgill-policy}
+
+``McGill University values academic integrity. Therefore, all students
+must understand the meaning and consequences of cheating, plagiarism and
+other academic offences under the Code of Student Conduct and
+Disciplinary Procedures'' (see \url{www.mcgill.ca/students/srr/honest/}
+for more information).
+
+\section{Other Policies}\label{other-policies}
+
+\subsection{Language of Submission:}\label{language-of-submission}
+
+In accord with McGill University's Charter of Students' Rights, students
+in this course have the right to submit in English or in French any
+written work that is to be graded.
+
+\subsection{Disabilities Policy}\label{disabilities-policy}
+
+As the instructor of this course I endeavor to provide an inclusive
+learning environment. However, if you experience barriers to learning in
+this course, do not hesitate to discuss them with me and the Office for
+Students with Disabilities, 514-398-6009.
+
+\subsection{End of Course Evaluations}\label{end-of-course-evaluations}
+
+``End-of-course evaluations are one of the ways that McGill works
+towards maintaining and improving the quality of courses and the
+student's learning experience. You will be notified by e-mail when the
+evaluations are available. Please note that a minimum number of
+responses must be received for results to be available to students.''
+\newpage
+
+\section{Class Schedule}\label{class-schedule}
+
+\paragraph{Week 01, 09/05 - 09/09: Introduction, Intro to
+R}\label{week-01-0905---0909-introduction-intro-to-r}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  READING: Ch. 1
+\end{itemize}
+
+\paragraph{Week 02, 09/12 - 09/16: Causality
+1}\label{week-02-0912---0916-causality-1}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Randomized experiments
+\item
+  READING: Ch. 2.1-2.4
+\item
+  PROBLEM SET 1 ASSIGNED: Tuesday, Sep 13
+\end{itemize}
+
+\paragraph{Week 03, 09/19 - 09/23: Causality
+2}\label{week-03-0919---0923-causality-2}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Observational Studies
+\item
+  READING: Ch. 2.5-2.7
+\item
+  PROBLEM SET 1 DUE: Thursday, Sep 22
+\item
+  PROBLEM SET 2 ASSIGNED: Thursday, Sep 22
+\end{itemize}
+
+\paragraph{Week 04, 09/26 - 09/30: Measurement
+1}\label{week-04-0926---0930-measurement-1}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Survey sampling
+\item
+  READING: 3.1--3.4
+\end{itemize}
+
+\paragraph{Week 05, 10/03 - 10/07: Measurement
+2}\label{week-05-1003---1007-measurement-2}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Clustering
+\item
+  READING: Ch 2.5-2.7
+\item
+  PROBLEM SET 2 DUE: Thursday, Oct 06
+\end{itemize}
+
+\paragraph{Week 06, 10/10 - 10/14: Prediction
+1}\label{week-06-1010---1014-prediction-1}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Prediction and Iteration (Looping)
+\item
+  READING: 4.1
+\item
+  NO CONFERENCE THIS WEEEK
+\item
+  \textbf{QUIZ 1 : Tuesday, Oct 11}
+\end{itemize}
+
+\paragraph{Week 07, 10/17 - 10/21: Prediction
+2}\label{week-07-1017---1021-prediction-2}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Regression
+\item
+  READING: Ch. 4.2 and 4.3
+\item
+  PROBLEM SET 3 ASSSIGNED: Tuesday, Oct 18
+\end{itemize}
+
+\paragraph{Week 08, 10/24 - 10/28: Probability
+1}\label{week-08-1024---1028-probability-1}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Probability and conditional probability
+\item
+  READING: Ch. 6 6.1--6.3
+\item
+  \textbf{PAPER CHECK IN : Tuesday, Oct 25 }
+\end{itemize}
+
+\paragraph{Week 09, 10/31 - 11/04: Probability
+2}\label{week-09-1031---1104-probability-2}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Random variables and their distributions, Large sample theorems
+\item
+  READING: Ch. 6.4--6.5
+\item
+  PROBLEM SET 3 DUE: Thursday, Nov 03
+\end{itemize}
+
+\paragraph{Week 10, 11/07 - 11/11: Uncertainty
+1}\label{week-10-1107---1111-uncertainty-1}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Estimation
+\item
+  READING: Ch. 7.1
+\item
+  NO CONFERENCE THIS WEEEK
+\item
+  \textbf{QUIZ 2 : Thursday, Nov 10 }
+\end{itemize}
+
+\paragraph{Week 11, 11/14 - 11/18: Uncertainty
+2}\label{week-11-1114---1118-uncertainty-2}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Hypothesis Tests
+\item
+  READING: Ch. 7.2
+\item
+  PROBLEM SET 4 ASSIGNED: Tuesday, Nov 15
+\end{itemize}
+
+\paragraph{Week 12, 11/21 - 11/25: Uncertainty
+3}\label{week-12-1121---1125-uncertainty-3}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  TOPIC: Regression with uncertainty
+\item
+  READING: Ch. 7.3
+\end{itemize}
+
+\paragraph{Week 13, 11/28 - 12/02: Wrap up: Poster
+Presenations}\label{week-13-1128---1202-wrap-up-poster-presenations}
+
+\begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
+\item
+  READING: TBD
+\item
+  PROBLEM SET 4 DUE: Thursday, Dec 01
+\item
+  \textbf{POSTER IN-CLASS: Thursday, Dec 01}
+\item
+  \textbf{FINAL PAPER DUE: BY TIME OF SCHEDULED EXAM}
+\end{itemize}
+
+
+
+
+\end{document}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
