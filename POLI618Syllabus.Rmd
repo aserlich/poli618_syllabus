@@ -12,10 +12,10 @@ author: Professor Aaron Erlich
 date: "Autumn 2017"
 email: "aaron.erlich@mcgill.ca"
 phone: 514-398-4756
-officehours: T 14-15 [(by appt)](http://www.aaronerlich.com/office-hours), Th 14-15 (drop-in)
+officehours: W 10-11 [(by appt)](http://www.aaronerlich.com/office-hours), F 10-11 (drop-in)
 office: "3610 McTavish, Room 26-4"
 classroom: "MUSIC A-412"
-classhours: "8:35 AM - 9:55 AM"
+classhours: "W,F 8:35 AM - 9:55 AM"
 
 
 TA:
@@ -42,7 +42,7 @@ mon <- as.Date("2016-09-04")
 #quiz1 <- as.Date("2016-10-11")
 #quiz2 <- as.Date("2016-11-10")
 
-paperCheckIn <- as.Date("2016-02-16")
+paperCheckIn <- as.Date("2016-02-17")
 FinalPaper <- as.Date("2017-10-09")
 Poster <- as.Date("2016-12-01")
 lastClassDay <- as.Date("2017-12-01")
@@ -73,7 +73,7 @@ myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE,
 ```
 
 # Course Description
-This course is designed to introduce graduate students to the new and exciting world of data driven political analysis. The course employs examples from across political science sub-disciplines.
+This course is designed to introduce graduate students to the new and exciting world of data driven political analysis. The course employs examples from across political science sub-disciplines and is generally relevant to all social science research. The course is divided into lectures and labs.
 
 ## Who this course is for?
 
@@ -87,10 +87,12 @@ This course is designed to introduce graduate students to the new and exciting w
 
 2. Obtain skills in  R, a highly powerful and FREE programming language used extensively by academics in political science across the world, as well as the open source and data science community.
 
-3. Gain real world skills that will help you obtain jobs in careers of the future. 
+3. Understand scientific replicability.
+
+4. Gain real world skills that will help you obtain jobs in careers of the future. 
 
 #Textbooks
-Given people's various backgrounds, we will have three required and several optional textbooks in addition to the assigned articles. The Bailey book is a great book and very applied. Everyone should read it. For those of you seriously interested in pursuing quantitative analysis you should then read the Fox book on top of the Bailey book. Unless otherwise cleared with me, everyone is required to do the math review problems assigned from the Moore book. The Grolemund and Wickham book is a great tool (that is online and free) and can often be used in lieu of videos or to help with coding. 
+Given people's various backgrounds, we will have three required and several optional textbooks in addition to the assigned articles. The Bailey book is a great book and very applied. Everyone should read it. For those of you seriously interested in pursuing quantitative analysis, you should then read the Fox book on top of the Bailey book. Unless otherwise cleared with me, everyone is required to do the math review problems assigned from the Moore book. The Grolemund and Wickham book is a great tool (that is online and free) and can often be used in lieu of videos or to help with coding. 
 
 ```{r, echo = FALSE, results="asis"} 
 bib[author = "Bailey"]
@@ -117,15 +119,15 @@ There are 1000 points available in the class. Therefore, for each 10% of the gra
 
 - **10%**. *Attendance and participation.*
 
-- **40%**. *Problem sets*.  While you may talk generally with other students about these assignments, these problems sets must be done individually. See the computer code section on academic integrity. A quarter of this grade will be from peer-reviewing each others' assignments on *Github*.
+- **40%**. *Problem sets*. A quarter of this grade will be from peer-reviewing each others' assignments on *GitHub*.
 
-- **10%** *Final Presentation*. In class presentation of research
+- **10%** *Final Presentation*. In class presentation of research.
 
-- **40%** *Final Paper*. A paper --- likely to be part of your dissertation or MA Thesis or a replication paper. 
+- **40%** *Final Paper*. A paper --- likely  a replication paper or part of your dissertation or MA Thesis. 
  
 
 ##Re-Grading
-Students who wish to contest a grade for an assignment or exam must do so in writing (by email, sent to me) providing the reasoning behind their challenge to the grade received within two weeks of the day on which the assignments are returned. The TA who graded the assignment will re-grade your assignment, and may **raise or lower the grade**. If you are still unsatisfied after the re-assessment, you can re-submit the assignment to me (original copy with TA comments), along with your justification. I will then re-evaluate the paper, but also reserve the right to **raise or lower the grade**. Please also see (http://www.mcgill.ca/politicalscience/files/politicalscience/assessment_and_re-read_policy_final.pdf).
+Students who wish to contest a grade for an assignment or exam must do so in writing (by email, sent to me) providing the reasoning behind their challenge to the grade received within two weeks of the day on which the assignments are returned. I will re-evaluate the paper, but also reserve the right to **raise or lower the grade**. Please also see (http://www.mcgill.ca/politicalscience/files/politicalscience/assessment_and_re-read_policy_final.pdf).
 
 
 ```{r, include=FALSE}
@@ -149,23 +151,23 @@ Students who wish to contest a grade for an assignment or exam must do so in wri
 ```
 
 #Assignment Submission
-1. Problem sets must be submitted via *Github*. You must use \texttt{.Rmd} otherwise known as \texttt{rmarkdown} files to complete your homework. Do not submit your homework using Microsft Word or any other document editor. It will not be graded. Part of your homework grade will be peer-reviewing your colleagues' homework assignments via the course *github*. There will be approximately 5 problem sets. I reserve the right to lower the number of problem sets if needed. In principle, these assignments will be due every 2 weeks starting week 2 for the proceeding 12 weeks of the term.
+
+Problem sets must be submitted via *GitHub*. You must use a variant \texttt{.Rmd} otherwise known as \texttt{rmarkdown} files that is GitHub  to complete your homework. Do not submit your homework using Microsft Word or any other document editor. It will not be graded. Part of your homework grade will be peer-reviewing your colleagues' homework assignments via the course *GitHub*. There will be approximately 5 problem sets. I reserve the right to lower the number of problem sets if needed. In principle, these assignments will be due every 2 weeks starting week 2 for the proceeding 12 weeks of the term. Collaboration is part of learning how to code. I encourage you to collaborate! But you do not learn how to do statistical programming if you DO NOT write your own code. Please feel free to collaborate with colleagues, but please DO NOT copy each others' code verbatim. You must also write your own interpretations of the results.     
 
 ##Interim Data Set and Check-in
-All students must submit a one page write up of the data set they are going to use and the research question they are going to ask by `r formatCourseDate(paperCheckIn)`. This should be a one page write up in \texttt{rmarkdown} explaining the data set/s which you are going to use and the question you will ask. You should also highlight your outcome variable. 
+All students must submit a one page write up of the data set they are going to use and the research question they are going to ask by `r formatCourseDate(paperCheckIn)`. This should be a one page write up in \texttt{rmarkdown} explaining the data set/s which you are going to use and the question you will ask. You should also highlight your outcome variable. Submission will be via *MyCourses*.
 
 ## Presentation
-Each individual will present their work in class to the rest of the course. All presentations must be completed in .Rpres or Beamer (LaTeX)
+Each individual will present their work in class to the rest of the course. All presentations must be completed in .Rpres, revealjs_presentation, or Beamer (LaTeX).
 
 ## Paper
-All student will submit a final paper that is of article length. This will be done via *MyCourses*. This can be a replication paper with extension of the original replication or a new paper. It is highly recommend you do a replication. Please come talk me as early in the term as possible, if you want to write an original paper. An original paper must contain 1) a clear theory proposing a relationship between explanatory variable(s) on an outcome variable; 2) use of linear regression (or some other model cleared with professor); 3) clear discussion of both findings and limitations of the paper. Students may use a chapter of their master or Ph.D. thesis as a research paper. The paper is due by the end `r formatCourseDate(paperCheckIn)`. 
+All students will submit a final paper that is of article length. This will be done via *MyCourses*. This can be *either* a replication paper with an extension of the original paper *or* a new paper. It is highly recommend you do a replication. Please come talk me as early in the term as possible if you want to write an original paper. An original paper must contain 1) a clear theory proposing a relationship between explanatory variable(s) on an outcome variable; 2) use of linear regression (or some other model cleared with professor); 3) a clear discussion of both findings and limitations of the paper. Students may use a chapter of their master or Ph.D. thesis as a research paper. The paper is due by the end of the exam period `r formatCourseDate(endExamDay)`. 
 
 # Class Discussion List and E-mail Policy
 I have set up a class discussion list on *MyCourses*. I encourage you to use this mailing list to ask questions you may have. *NEVER* post your code or specific homework questions on the course list server. Please post general questions! If you post homework code on the website, it will be taken down and your grade may be lowered. 
 
 # Make-Up Work Policy
 If you are absent for documented emergency medical or family reasons, an alternative homework submission date will be arranged. The alternative arrangement is only open to those who can provide a valid medical/family reason for missing the quizzes. If you cannot provide a valid reason for your absence, you will receive 0 points for the missed quiz or homework submission. 
-
 
 Students who need to miss a class due to a religious holiday should notify me at least fourteen
 days prior to the holiday. If you must miss a class, an examination, a work assignment, or a
@@ -181,7 +183,7 @@ instructor.
 
 # Academic Integrity
 ##Course Policy on Computer Code
-Just like writing a paper, copying other people's computer code constitutes plagiarism. Moreover data programming is learned through trial and error. **Please do not under any circumstances copy another students code.** If you are found to have done so, you may be referred to the appropriate Dean. The instructors reserve the right to use software to compare the code that has been written by different students. 
+As discussed in the problems set section, verbatim copying other people's computer code constitutes plagiarism. Moreover, data programming is learned through trial and error. **Please do not under any circumstances copy another students code.**  You may of course collaborate with colleagues, but please write your own code! If you are found to have plagiarized, you may be referred to the appropriate Dean. The instructors reserve the right to use software to compare the code that has been written by different students. 
 
 ## McGill Policy
 "McGill University values academic integrity. Therefore, all students must understand the meaning and consequences of cheating, plagiarism and other academic offences under the Code of Student Conduct and Disciplinary Procedures” (see [www.mcgill.ca/students/srr/honest/](www.mcgill.ca/students/srr/honest/) for more information). 
@@ -209,15 +211,15 @@ End-of-course evaluations are one of the ways that McGill works towards maintain
     + Bailey Ch. 1
     
 * TASKS
-    + Complete [tryGit](https://try.github.io/levels/1/challenges/1)
-    + Install git on your computer and push a test file to github
+    + Complete [tryGit](https://try.GitHub.io/levels/1/challenges/1)
+    + Install git on your computer and push a test file to GitHub
 
 
 ```{r, echo = FALSE, results="asis"} 
 # bib[90:97]
 ```
 
-#### `r advdate(mon, 2)`: Introduction to R-Markdown, Managing Data, Replication, Git and Github
+#### `r advdate(mon, 2)`: Introduction to R-Markdown, Managing Data, Replication, Git and GitHub
 
 * VIDEOS:
     + Data camp: [Data minipulation lectures](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial)
@@ -297,13 +299,16 @@ bib[author = "Brambor"]
     + Moore Chapter 12
     + Fox Chapter 9.1-9.2
 
-#### `r advdate(mon, 9)`
-- NO CLASS, READING WEEK
+#### `r advdate(mon, 9)` : LS and Causal Inference
+- READING: 
+    + TBD
+    + TBD
+- NO CLASS NOVEMBER 31, WORK ON YOUR PAPERS
 
 #### `r advdate(mon, 10)`: Linear Regression Diagnostics and Fixes
 - READING: 
-    + Bailey Chapters 6.1–6.3
-    + Fox Chapters 11-13
+    + Moore Chapter 12
+    + Fox Chapter 9.1-9.2
     
 #### `r advdate(mon, 11)`: Logit/Probit and Linear Probability Model
 * READING: 
