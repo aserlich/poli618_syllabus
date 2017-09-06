@@ -12,10 +12,10 @@ author: Professor Aaron Erlich
 date: "Autumn 2017"
 email: "aaron.erlich@mcgill.ca"
 phone: 514-398-4756
-officehours: W 10-11 [(by appt)](http://www.aaronerlich.com/office-hours), F 10-11 (drop-in)
+officehours: W 4-5 F 10-11 (drop-in)
 office: "3610 McTavish, Room 26-4"
 classroom: "MUSIC A-412"
-classhours: "W,F 8:35 AM - 9:55 AM"
+classhours: "W,F 8:55 AM - 9:55 AM"
 
 
 TA:
@@ -42,7 +42,7 @@ mon <- as.Date("2016-09-04")
 #quiz1 <- as.Date("2016-10-11")
 #quiz2 <- as.Date("2016-11-10")
 
-paperCheckIn <- as.Date("2016-02-17")
+paperCheckIn <- as.Date("2017-10-23")
 FinalPaper <- as.Date("2017-10-09")
 Poster <- as.Date("2016-12-01")
 lastClassDay <- as.Date("2017-12-01")
@@ -152,7 +152,7 @@ Students who wish to contest a grade for an assignment or exam must do so in wri
 
 #Assignment Submission
 
-Problem sets must be submitted via *GitHub*. You must use a variant \texttt{.Rmd} otherwise known as \texttt{rmarkdown} files that is GitHub  to complete your homework. Do not submit your homework using Microsft Word or any other document editor. It will not be graded. Part of your homework grade will be peer-reviewing your colleagues' homework assignments via the course *GitHub*. There will be approximately 5 problem sets. I reserve the right to lower the number of problem sets if needed. In principle, these assignments will be due every 2 weeks starting week 2 for the proceeding 12 weeks of the term. Collaboration is part of learning how to code. I encourage you to collaborate! But you do not learn how to do statistical programming if you DO NOT write your own code. Please feel free to collaborate with colleagues, but please DO NOT copy each others' code verbatim. You must also write your own interpretations of the results.     
+Problem sets must be submitted via *GitHub*. You must use a variant \texttt{.Rmd} otherwise known as \texttt{rmarkdown} files that is GitHub compatible to complete your homework. Do not submit your homework using Microsft Word or any other document editor. It will not be graded. Part of your homework grade will be peer-reviewing your colleagues' homework assignments via the course *GitHub*. There will be approximately 5 problem sets. I reserve the right to lower the number of problem sets if needed. In principle, these assignments will be due every 2 weeks starting week 2 for the proceeding 12 weeks of the term. Collaboration is part of learning how to code. I encourage you to collaborate! But you do not learn how to do statistical programming if you DO NOT write your own code. Please feel free to collaborate with colleagues, but please DO NOT copy each others' code verbatim. You must also write your own interpretations of the results.     
 
 ##Interim Data Set and Check-in
 All students must submit a one page write up of the data set they are going to use and the research question they are going to ask by `r formatCourseDate(paperCheckIn)`. This should be a one page write up in \texttt{rmarkdown} explaining the data set/s which you are going to use and the question you will ask. You should also highlight your outcome variable. Submission will be via *MyCourses*.
@@ -202,17 +202,19 @@ End-of-course evaluations are one of the ways that McGill works towards maintain
 
 # Class Schedule
 
-#### `r advdate(mon, 1)`: Introduction, Intro to R
+#### `r advdate(mon, 1)`: Introduction, Prediction and Causation, Intro to R
 * VIDEOS:
     + Data camp: [Intro R lectures](https://www.datacamp.com/courses/free-introduction-to-r-beta) Chapters 1 (Intro to Basics), 2 (Vectors), 4 (Factors), and 5 (Data Frames)
     + Data camp: [R-markdown lectures]( https://www.datacamp.com/courses/reporting-with-r-markdown)
 * READING:
     + Moore Ch. 1
     + Bailey Ch. 1
+    + Grolemund & Wikham Ch. 27
     
 * TASKS
     + Complete [tryGit](https://try.GitHub.io/levels/1/challenges/1)
     + Install git on your computer and push a test file to GitHub
+    + Fill out Pre-course Survey [(Google Form)](https://goo.gl/forms/8cw5GZEyl1k3ynBY2)
 
 
 ```{r, echo = FALSE, results="asis"} 
@@ -227,7 +229,6 @@ End-of-course evaluations are one of the ways that McGill works towards maintain
 * READING: 
     + Moore Chapter 5, 6
     + Bailey Chapter 2
-    + Grolemund & Wikham Ch. 27
     +
 ```{r, echo = FALSE, results="asis"} 
 bib[author = "Dafoe"]
@@ -273,7 +274,6 @@ bib["king_making_2000"]
 
 ```
 
-
 #### `r advdate(mon, 6)`: Interaction Terms, Simulation
 
 * READING: 
@@ -289,21 +289,21 @@ bib[author = "Brambor"]
 
 * **PAPER CHECK IN :  `r formatCourseDate(paperCheckIn)` **
 
-####  `r advdate(mon, 7)`: Assumptions & Properties of the Linear Regression 
+####  `r advdate(mon, 7)`: Assumptions & Properties of Linear Regression 
 * READING:
     + Bailey Ch. 14
     + Fox Ch.6 
-
-#### `r advdate(mon, 8)`: Matrix Presentation of LS
-* READING:  
-    + Moore Chapter 12
-    + Fox Chapter 9.1-9.2
 
 #### `r advdate(mon, 9)` : LS and Causal Inference
 - READING: 
     + TBD
     + TBD
-- NO CLASS NOVEMBER 31, WORK ON YOUR PAPERS
+- NO CLASS NOVEMBER 23, WORK ON YOUR PAPERS
+
+#### `r advdate(mon, 8)`: Matrix Presentation of LS
+* READING:  
+    + Moore Chapter 12
+    + Fox Chapter 9.1-9.2
 
 #### `r advdate(mon, 10)`: Linear Regression Diagnostics and Fixes
 - READING: 
